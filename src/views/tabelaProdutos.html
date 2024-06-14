@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--evitar ataques de Cross Site Scripting (injeção de dados)-->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <title>Editar Cliente</title>
+    
+</head>
+<body>
+    <main class="container d-flex flex-column align-items-center justify-content-center">
+    <h1 class="text-center text-light m-3">Relatorio</h1>
+    <table class="table table-dark table-striped table-hover mt-5 text-center" id="formCadastros" >
+        <thead>
+            <tr>
+                <th>Fornecedor do produto</th>
+                <th>Código de barras do produto</th>
+                <th>Nome do produtoo</th>
+                <th>Quantidade em estoque</th>
+                <td>Valor do produto</td>        
+            </tr>
+        </thead>
+        <tbody id="listaCadastros"></tbody>
+    </table>
+</main>
+    <script src="../public/js/janela3/renderer.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "electron": "^30.0.8",
+    "init": "^0.1.2",
+    "mongoose": "^8.4.0"
+  },
+  "name": "cadastro",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Andres e Edinaldo",
+  "license": "MIT",
+  "description": ""
+}
