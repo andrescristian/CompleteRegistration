@@ -173,15 +173,10 @@ const aboutWindow3 = () => {
   })
 }
 
-
-
-
 //----------------fim da janela sobre-------------------------
 app.whenReady().then(() => {
   createWindow() //criar a janela
   //IMPORTANTE!!! Executar tambem a função novoArquivo() para criar o objeto file (mesmo comportamento do bloco de notas e editores de codigo)
-
-
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -404,8 +399,6 @@ ipcMain.on('new-fornecedor', async (event, args) => {
 
 })
 
-
-
 ipcMain.on('new-produto', async (event, args) => {
   console.log(args) // teste de recebimento
   // Salvar no banco de dados os dados do formulario
@@ -472,7 +465,6 @@ ipcMain.on('new-produto', async (event, args) => {
   } catch (error) {
     
   }
-
 })
 
 ipcMain.on('procurar-nome', async (event, args) => {
@@ -510,54 +502,6 @@ ipcMain.on('get-produto', async (event, args) => {
   //passo 3(slide) enviar ao renderer(view) as tarefas pendentes
   event.reply('pending-produto', JSON.stringify(cadastrosPendentes))//JSON.stringify converte para o JSON
 })
-
-
-
-
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//CRUD Update
-// ipcMain.on('update-task', async (event, args) => {
-//   console.log(args) // teste de recebimento dos dados do form
-// //passo 4 crud update (slide) - Alterar as informações no banco de dados
-
-// if (args.nome === ""){
-//   dialog.showMessageBox(winAbout,{
-//     type:"info",
-//     message: 'Preencha o nome, campo obrigatorio',
-//     buttons: ['ok']
-//   })
-
-// } else if (args.telefone === ""){
-//   dialog.showMessageBox(winAbout,{
-//     type:"info",
-//     message: 'Preencha o telefone, campo obrigatorio',
-//     buttons: ['ok']
-//   })
-// }else{
-//   const cadastroEditado = await Cadastros.findByIdAndUpdate(
-//     args.idCadastro, {
-//       nome: args.nome,
-//       telefone: args.telefone,
-//       email: args.email,
-//       cpf: args.cpf,
-//       cep: args.cep,
-//       logradouro: args.logradouro,
-//       numero: args.numero,
-//       complemento: args.complemento,
-//       bairro: args.bairro,
-//       cidade: args.cidade,
-//       uf: args.uf
-//     },
-//     {
-//       new: true
-//     }
-//   ) 
-
-// // enviar a confirmação para o renderer junto com a tarefa editada (passo 5 crud update slide)
-// event.reply('update-task-success', JSON.stringify(cadastroEditado))
-// }
-
-// })
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //CRUD Delete - excluir os dados do banco
@@ -968,9 +912,6 @@ ipcMain.on('excluir-produto', async (event, produto) => {
   })
 })
 
-
-
-
 //acessar site
 ipcMain.on('site-url', async (event, url) => {
   console.log(url);
@@ -983,8 +924,3 @@ ipcMain.on('site-url', async (event, url) => {
 ipcMain.on('search-barcode', (event, barcode) => {
   console.log(barcode)
 })
-
-
-
-
-
